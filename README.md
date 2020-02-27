@@ -46,7 +46,7 @@ The second job is respondible for sampling the streaming tuples.
 ## Instructions 
 
 In order to run our code.
-**1.** You Download Java Project [Producer](Job1/finaljob1.jar) 
+1. You Download Java Project [Producer](Job1/finaljob1.jar) 
 	1. You run as Java Application with inputs
 2. You Download Flink Project [Job1](Job1/finaljob1.jar)
 3. You open the first Windows Terminal 
@@ -60,5 +60,6 @@ In order to run our code.
 
 ## Inputs
 
-## Outline
+* For the Job1
 
+* For the Job2 
