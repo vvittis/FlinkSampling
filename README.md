@@ -39,9 +39,9 @@ where M is the Memory Budget, which is also an argument for the Job1.
 The second job is respondible for sampling the streaming tuples. 
 * It reads from two Sources. The first Source (testSource, from Procuder) streams the *datastream* and the second Source (testSink,from Job1) streams the *broadCastStream*
 * It broadcasts the *broadCastStream* to all workers and actually sets the terminal conditions to each worker.
-* In the proces() function in order to keep intermediate results of the incoming tuples each worker creates an ArrayList using MapStateDescriptor<String, ArrayList<String>>, esnsuring that each worker has its own ArrayList processed.
-* It implements reservoir sampling on the streaming tuples and using the *si* and the *counter of stratum* updates the correspoding ArrayList
-* It writes the output data to an output topic (testSink1)
+* Creates an ArrayList using MapStateDescriptor<String, ArrayList<String>>, esnsuring that each worker has its own ArrayList processed to keep candidate tuples.
+* During the connection, in the proces( ) function, it implements reservoir sampling on the streaming tuples and using the *si* and the *counter of stratum* updates the correspoding ArrayList.
+* It writes the output data, in the same form as it receives them from Topic testSource, to an output topic (testSink1).
 
 ## Instructions 
 ## Inputs
