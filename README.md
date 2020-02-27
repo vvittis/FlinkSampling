@@ -71,16 +71,17 @@ In order to run our code.
 
 * For the Job1 the inputs are:
 
--columns Year,District.Code,District.Name,Neighborhood.Code,Neighborhood.Name,Gender,Age,Number
--group_attr District.Name,Year
--aggr_attr Number
--memory 500
--parallelism 4
--windowTime 60
--windowTime1 20
+	-columns Year,District.Code,District.Name,Neighborhood.Code,Neighborhood.Name,Gender,Age,Number
+	-group_attr District.Name,Year
+	-aggr_attr Number
+	-memory 500
+	-parallelism 4
+	-windowTime 60
+	-windowTime1 20
 
-* For the  Job2
--columns Year,District.Code,District.Name,Neighborhood.Code,Neighborhood.Name,Gender,Age,Number 
--group_attr District.Name,Year
--parallelism 4 
--output testSink1
+* For the Job2 the inputs are:
+
+	-columns Year,District.Code,District.Name,Neighborhood.Code,Neighborhood.Name,Gender,Age,Number 
+	-group_attr District.Name,Year
+	-parallelism 4 
+	-output testSink1
