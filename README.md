@@ -49,18 +49,17 @@ Markup : ```javascript
 ## Instructions 
 
 In order to run our code.
-1. You run the [Producer](Job1/finaljob1.jar) with inputs
-
-2. You download [Job1](Job1/finaljob1.jar)
+1. You Download Java Project [Producer](Job1/finaljob1.jar) 
+	1. You run as Java Application with inputs
+2. You Download Flink Project [Job1](Job1/finaljob1.jar)
 3. You open first Windows Terminal 
-	i. Type cd C:\flink-1.8.2\bin\ 
+	1. Type cd C:\flink-1.8.2\bin\ 
 	2. Type C:\flink-1.8.2\bin\start-cluster.bat
-	3. flink run *"yourJar1Path"*
-
-4. You download [Job2]()
+	3. flink run *"yourJar1Path"* with inputs
+4. You Download Flink Project [Job2]()
 5. You open second Windows Terminal
 	1. Type cd C:\flink-1.8.2\bin\ 
-	2. flink run *"yourJar2Path"*
+	2. flink run *"yourJar2Path"* with inputs
 
 ## Inputs
 
