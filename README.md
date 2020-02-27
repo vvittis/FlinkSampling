@@ -44,6 +44,9 @@ The second job is respondible for sampling the streaming tuples.
 * It writes the output data, in the same form as it receives them from Topic testSource, to an output topic (testSink1).
 
 ## Instructions 
+
+In order to run our code.
+1. You run P [Job1](pom.xml)
 ## Inputs
 
 ## Outline
