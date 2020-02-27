@@ -14,10 +14,10 @@ The existing implementation does not work for every format of csv...
 ### Job1
 The first job is responsible for the calculation of the mean, the variance and the γi,which depends from the previous two variables, for each individual stratum.
 In this phase we run across all data of the specified window for the first time.
-⋅⋅* It reads all the streaming data from the intercom Topic which has specified by the procuder.
-⋅⋅* It sets a timeWindow1(), whose time is an input to the Job1. 
+* It reads all the streaming data from the intercom Topic which has specified by the procuder.
+* It sets a timeWindow1(), whose time is an input to the Job1. 
 #### Window 1
-⋅⋅* In this windows process() it calculates the mean and the variance based on the generated Iterable input and returns a generic Tuple5<String,Double,Double,Double,Integer> 
+* In this windows process() it calculates the mean and the variance based on the generated Iterable input and returns a generic Tuple5<String,Double,Double,Double,Integer> 
 where the fields are the following:
 1. The group bys attributes 
 2. The mean
