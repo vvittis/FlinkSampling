@@ -16,8 +16,10 @@ The first job is responsible for the calculation of the mean, the variance and t
 In this phase we run across all data of the specified window for the first time.
 * It reads all the streaming data from the intercom Topic which has specified by the procuder.
 * It sets a timeWindow1( ), whose time is an argument in Job1. 
+* It sets a timeWindow2( ), whose time is an argument in Job1. 
+* It writes the output data to an intecom Topic (testSink).
 #### Window 1
-* In this windows we have a keySelector1( ) which selects the first field (aka group by attribute) and in the  process( ) it calculates the mean and 
+* In this windows we have the KeySelector1( ) which selects the first field (aka group by attributes) and in the process( ) fucntion, calculates the mean and 
 the variance based on the generated Iterable 
 input and returns a generic Tuple5<String,Double,Double,Double,Integer> 
 where the fields are the following:
@@ -27,7 +29,8 @@ where the fields are the following:
 4. The counter of the stratum 
 5. The constant value of 1
 #### Window 2
-* In this window we 
+* In this window we have the KeySelector2( ) which selects the last field (aka the constant value of 1) and based on this key the process() function
+calculates the γi (variance/mean) of each stratum and finds the total γ which represents the sum of all γi. Lastly, it writes the data in a Sink as mentioned before.
 ### Job2
 
 ## Instructions 
