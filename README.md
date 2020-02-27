@@ -66,7 +66,7 @@ In order to run our code.
 
 
 * For the Producer
-*"yourJar2Path\population.csv"*
+*"yourPath\population.csv"*
 
 
 * For the Job1 the inputs are:
