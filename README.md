@@ -33,9 +33,15 @@ where the fields are the following:
 calculates the γi (variance/mean) of each stratum and finds the total γ which represents the sum of all γi. Lastly, it writes the data in a Sink as mentioned before.
 The returned Tuple and the output of the first Job is of the type of **_(T)_** where all fields are the same, except the last one, where now we put the si (=M\*(γi/γ)) of each stratum 
 where M is the Memory Budget, which is also an argument for the Job1.
+
 ### Job2
 
-The second job is respondible for 
+The second job is respondible for sampling the streaming tuples. 
+* It reads from two Sources. The first Source (testSource) is from the Procuder and the second Source (testSink) is from Job1
+* It
+* It
+* It
+* It
 
 ## Instructions 
 ## Inputs
