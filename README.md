@@ -43,9 +43,6 @@ The second job is respondible for sampling the streaming tuples.
 * During the connection, in the proces( ) function, it implements reservoir sampling on the streaming tuples and using the *si* and the *counter of stratum* updates the correspoding ArrayList.
 * It writes the output data, in the same form as it receives them from Topic testSource, to an output topic (testSink1).
 
-Markup : ```javascript
-         ```
-
 ## Instructions 
 
 In order to run our code.
