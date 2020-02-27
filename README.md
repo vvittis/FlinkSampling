@@ -3,7 +3,7 @@
 ## Purpose
 This is a project implenting Random Sampling for Group-By Queries [(1)](https://arxiv.org/pdf/1909.02629.pdf) in Flink Platform.
 The goal of this project is to sample streaming tuples, answering effectively Single Aggregate and Multi Group-Bys queries.
-This implementation is a two-pass algorithm which devides into two phases. The first phase has been taken from the first job and the second phase from the second job.
+This implementation is a two-pass algorithm which is devided into two phases. The first phase has been taken from the first job and the second phase from the second job.
 
 
 ## Pipeline
