@@ -35,8 +35,7 @@ The returned Tuple and the output of the first Job is of the type of **_(T)_** w
 where M is the Memory Budget, which is also an argument for the Job1.
 
 
-Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![](Sources/Photos/Job1.jpg "Job1")
 
 
 ### Job2
