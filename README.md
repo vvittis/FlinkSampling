@@ -65,11 +65,11 @@ In order to run our code.
 ## Inputs
 
 
-* For the Producer
+* **For the Producer**
 *"yourPath\population.csv"*
 
 
-* For the Job1 the inputs are:
+* **For the Job1 the inputs are:**
 
 	-columns Year,District.Code,District.Name,Neighborhood.Code,Neighborhood.Name,Gender,Age,Number
 	-group_attr District.Name,Year
@@ -79,7 +79,7 @@ In order to run our code.
 	-windowTime 60
 	-windowTime1 20
 
-* For the Job2 the inputs are:
+* **For the Job2 the inputs are:**
 
 	-columns Year,District.Code,District.Name,Neighborhood.Code,Neighborhood.Name,Gender,Age,Number 
 	-group_attr District.Name,Year
