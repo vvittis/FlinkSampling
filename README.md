@@ -13,7 +13,7 @@ This implementation is a two-pass algorithm which is devided into two phases. Th
 We have implemented a simple Kafka Producer which reads from a csv file (input) and writes to a specified Topic each line of the input file.
 The existing implementation does not work for every format of csv...
 ### Job1
-The first job is responsible for the calculation of the mean, the variance and the γi,which depends from the previous two variables, for each individual stratum.
+The first job is responsible for the calculation of the mean, the variance and the γi(coefficient of variation-CV),which depends from the previous two variables, for each individual stratum.
 In this phase we run across all data of the specified window for the first time.
 * It reads all the streaming data from the intercom Topic which has specified by the procuder.
 * It sets a timeWindow1( ), whose time is an argument in Job1. 
