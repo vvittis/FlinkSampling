@@ -64,6 +64,26 @@ In order to run our code.
 
 ## Inputs
 
-* For the Job1
+
+* Producer
+C:\Users\Nikos\eclipse-workspace\ECE622\population.csv
+------------------------------
+
+* Job1
+
+-columns Year,District.Code,District.Name,Neighborhood.Code,Neighborhood.Name,Gender,Age,Number
+-group_attr District.Name,Year
+-aggr_attr Number
+-memory 500
+-parallelism 4
+-windowTime 60
+-windowTime1 20
+
+* Job2
+-columns Year,District.Code,District.Name,Neighborhood.Code,Neighborhood.Name,Gender,Age,Number 
+-group_attr District.Name,Year
+-parallelism 4 
+-output testSink1
+------------------------------
 
 * For the Job2 
