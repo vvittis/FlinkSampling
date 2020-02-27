@@ -65,11 +65,11 @@ In order to run our code.
 ## Inputs
 
 
-* Producer
-C:\Users\Nikos\eclipse-workspace\ECE622\population.csv
+* For the Producer
+*"yourJar2Path\population.csv"*
 
 
-* Job1
+* For the Job1 the inputs are:
 
 -columns Year,District.Code,District.Name,Neighborhood.Code,Neighborhood.Name,Gender,Age,Number
 -group_attr District.Name,Year
@@ -79,11 +79,8 @@ C:\Users\Nikos\eclipse-workspace\ECE622\population.csv
 -windowTime 60
 -windowTime1 20
 
-* Job2
+* For the  Job2
 -columns Year,District.Code,District.Name,Neighborhood.Code,Neighborhood.Name,Gender,Age,Number 
 -group_attr District.Name,Year
 -parallelism 4 
 -output testSink1
-
-
-* For the Job2 
