@@ -21,7 +21,7 @@ In this phase we run across all data of the specified window for the first time.
 #### Window 1
 * In this windows we have the KeySelector1( ) which selects the first field (aka group by attributes) and in the process( ) fucntion, calculates the mean and 
 the variance based on the generated Iterable 
-input and returns a generic Tuple5<String,Double,Double,Double,Integer> *1*
+input and returns a generic Tuple5<String,Double,Double,Double,Integer> **(1)**
 where the fields are the following:
 1. The group bys attributes 
 2. The mean
@@ -31,7 +31,7 @@ where the fields are the following:
 #### Window 2
 * In this window we have the KeySelector2( ) which selects the last field (aka the constant value of 1) and based on this key the process() function
 calculates the γi (variance/mean) of each stratum and finds the total γ which represents the sum of all γi. Lastly, it writes the data in a Sink as mentioned before.
-The returned Tuple and the output of the first Job is of the type of *1* where all fields are the same, except the last one, where now we put the si (γi/γ) of each stratum.
+The returned Tuple and the output of the first Job is of the type of **(1)**where all fields are the same, except the last one, where now we put the si (γi/γ) of each stratum.
 ### Job2
 
 The second job is respondible for 
