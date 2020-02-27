@@ -46,7 +46,7 @@ The second job is respondible for sampling the streaming tuples.
 ## Instructions 
 
 In order to run our code.
-1. You run P [Job1](pom.xml)
+1. You run P [Job1](Job1/pom.xml)
 ## Inputs
 
 ## Outline
