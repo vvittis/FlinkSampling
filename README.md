@@ -67,7 +67,7 @@ In order to run our code.
 
 * Producer
 C:\Users\Nikos\eclipse-workspace\ECE622\population.csv
-------------------------------
+
 
 * Job1
 
@@ -84,6 +84,6 @@ C:\Users\Nikos\eclipse-workspace\ECE622\population.csv
 -group_attr District.Name,Year
 -parallelism 4 
 -output testSink1
-------------------------------
+
 
 * For the Job2 
