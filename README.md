@@ -43,20 +43,23 @@ The second job is respondible for sampling the streaming tuples.
 * During the connection, in the proces( ) function, it implements reservoir sampling on the streaming tuples and using the *si* and the *counter of stratum* updates the correspoding ArrayList.
 * It writes the output data, in the same form as it receives them from Topic testSource, to an output topic (testSink1).
 
+Markup : ```javascript
+         ```
+
 ## Instructions 
 
 In order to run our code.
 1. You run the [Producer](Job1/finaljob1.jar) with inputs
 2. You download [Job1](Job1/finaljob1.jar)
 3. You open 1 Windows Terminal and type 
-	i. Type cd C:\flink-1.8.2\bin\ 
-	ii. Type C:\flink-1.8.2\bin\start-cluster.bat
-	iii. flink run *"yourJar1Path"*
+	1. Type cd C:\flink-1.8.2\bin\ 
+	2. Type C:\flink-1.8.2\bin\start-cluster.bat
+	3. flink run *"yourJar1Path"*
 
 4. You download [Job2]()
 5. You open 2 Windows Terminal and type 
-	i. Type cd C:\flink-1.8.2\bin\ 
-	ii. flink run *"yourJar2Path"*
+	1. Type cd C:\flink-1.8.2\bin\ 
+	2. flink run *"yourJar2Path"*
 
 ## Inputs
 
