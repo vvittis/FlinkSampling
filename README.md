@@ -36,7 +36,7 @@ The returned Tuple and the output of the first Job is of the type of **_(T)_** w
 where M is the Memory Budget, which is also an argument for the Job1.
 
 
-![](Sources/Photos/job1.jpg "Job1")
+![](Sources/Photos/job1.PNG "Job1")
 
 
 ### Job2
@@ -48,19 +48,19 @@ The second job is respondible for sampling the streaming tuples.
 * During the connection, in the proces( ) function, it implements reservoir sampling on the streaming tuples and using the *si* and the *counter of stratum* updates the correspoding ArrayList.
 * It writes the output data, in the same form as it receives them from Topic testSource, to an output topic (testSink1).
 
-![](Sources/Photos/job2.jpg "Job1")
+![](Sources/Photos/job2.PNG "Job2")
 
 ## Instructions 
 
 In order to run our code.
-1. You Download Java Project [Producer](Job1/finaljob1.jar) 
+1. You Download Java Project [Producer](SimpleProducer/SimpleProducer.jar) 
 	1. You run as Java Application with inputs
-2. You Download Flink Project [Job1](Job1/finaljob1.jar)
+2. You Download Flink Project [Job1](Jars/finaljob1.jar)
 3. You open the first Windows Terminal 
 	1. Type cd C:\flink-1.8.2\bin\ 
 	2. Type C:\flink-1.8.2\bin\start-cluster.bat
 	3. flink run *"yourJar1Path"* with inputs
-4. You Download Flink Project [Job2]()
+4. You Download Flink Project [Job2](Jars/finaljob2.jar)
 5. You open the second Windows Terminal
 	1. Type cd C:\flink-1.8.2\bin\ 
 	2. flink run *"yourJar2Path"* with inputs
