@@ -35,7 +35,7 @@ The returned Tuple and the output of the first Job is of the type of **_(T)_** w
 where M is the Memory Budget, which is also an argument for the Job1.
 
 
-![](Sources/Photos/Job1.jpg "Job1")
+![](Sources/Photos/job1.jpg "Job1")
 
 
 ### Job2
@@ -46,6 +46,8 @@ The second job is respondible for sampling the streaming tuples.
 * Creates an ArrayList using MapStateDescriptor<String, ArrayList<String>>, esnsuring that each worker has its own ArrayList processed to keep candidate tuples.
 * During the connection, in the proces( ) function, it implements reservoir sampling on the streaming tuples and using the *si* and the *counter of stratum* updates the correspoding ArrayList.
 * It writes the output data, in the same form as it receives them from Topic testSource, to an output topic (testSink1).
+
+![](Sources/Photos/job2.jpg "Job1")
 
 ## Instructions 
 
@@ -71,17 +73,8 @@ In order to run our code.
 
 * **For the Job1 the inputs are:**
 
-	-columns Year,District.Code,District.Name,Neighborhood.Code,Neighborhood.Name,Gender,Age,Number
-	-group_attr District.Name,Year
-	-aggr_attr Number
-	-memory 500
-	-parallelism 4
-	-windowTime 60
-	-windowTime1 20
+	-columns Year,District.Code,District.Name,Neighborhood.Code,Neighborhood.Name,Gender,Age,Number -group_attr District.Name,Year -aggr_attr Number -memory 500 -parallelism 4 -windowTime 60 -windowTime1 20
 
 * **For the Job2 the inputs are:**
 
-	-columns Year,District.Code,District.Name,Neighborhood.Code,Neighborhood.Name,Gender,Age,Number 
-	-group_attr District.Name,Year
-	-parallelism 4 
-	-output testSink1
+	-columns Year,District.Code,District.Name,Neighborhood.Code,Neighborhood.Name,Gender,Age,Number -group_attr District.Name,Year -parallelism 4 -output testSink1
