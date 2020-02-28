@@ -39,7 +39,7 @@ where M is the Memory Budget, which is also an argument for the Job1.
 ![](Sources/Photos/job1.PNG "Job1")
 
 
-### Job2
+### Job2 - Sampling
 
 The second job is respondible for sampling the streaming tuples. 
 * It reads from two Sources. The first Source (testSource, from Procuder) streams the *datastream* and the second Source (testSink,from Job1) streams the *broadCastStream*
