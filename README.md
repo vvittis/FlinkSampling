@@ -32,7 +32,7 @@ where the fields are the following:
 #### Window 2
 * In this window we have the KeySelector2( ) which selects the last field (aka the constant value of 1) and based on this key the process() function
 calculates the γi (variance/mean) of each stratum and finds the total γ which represents the sum of all γi. Lastly, it writes the data in a Sink as mentioned before.
-The returned Tuple and the output of the first Job is of the type of **_(T)_** where all fields are the same, except the last one, where now we put the si (=M\*(γi/γ),size of stratum) of each stratum 
+The returned Tuple and the output of the first Job is of the type of **_(T)_** where all fields are the same, except the last one, where now we put the si ( M\*(γi/γ),size of stratum) of each stratum 
 where M is the Memory Budget, which is also an argument for the Job1.
 
 
