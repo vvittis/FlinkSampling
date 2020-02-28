@@ -2,8 +2,9 @@
  
 ## Purpose
 This is a project implenting Random Sampling for Group-By Queries [(1)](https://arxiv.org/pdf/1909.02629.pdf) in Flink Platform.
-The goal of this project is to sample streaming tuples, answering effectively Single Aggregate and Multi Group-Bys queries.
-This implementation is a two-pass algorithm which is devided into two phases. The first phase has been taken from the first job and the second phase from the second job.
+The goal of this project is to sample streaming tuples, answering effectively Single Aggregate along with a single group-by clause.
+This implementation is a two-pass algorithm which is devided into two phases. The first phase has been taken from the first job 
+( pre-processing ) and the second phase from the second job(reservoir sampling).
 
 
 ## Pipeline
@@ -12,7 +13,7 @@ This implementation is a two-pass algorithm which is devided into two phases. Th
 We have implemented a simple Kafka Producer which reads from a csv file (input) and writes to a specified Topic each line of the input file.
 The existing implementation does not work for every format of csv...
 ### Job1
-The first job is responsible for the calculation of the mean, the variance and the γi,which depends from the previous two variables, for each individual stratum.
+The first job is responsible for the calculation of the mean, the variance and the γi(coefficient of variation-CV),which depends from the previous two variables, for each individual stratum.
 In this phase we run across all data of the specified window for the first time.
 * It reads all the streaming data from the intercom Topic which has specified by the procuder.
 * It sets a timeWindow1( ), whose time is an argument in Job1. 
@@ -31,7 +32,7 @@ where the fields are the following:
 #### Window 2
 * In this window we have the KeySelector2( ) which selects the last field (aka the constant value of 1) and based on this key the process() function
 calculates the γi (variance/mean) of each stratum and finds the total γ which represents the sum of all γi. Lastly, it writes the data in a Sink as mentioned before.
-The returned Tuple and the output of the first Job is of the type of **_(T)_** where all fields are the same, except the last one, where now we put the si (=M\*(γi/γ)) of each stratum 
+The returned Tuple and the output of the first Job is of the type of **_(T)_** where all fields are the same, except the last one, where now we put the si ( M\*(γi/γ),size of stratum ) of each stratum 
 where M is the Memory Budget, which is also an argument for the Job1.
 
 
