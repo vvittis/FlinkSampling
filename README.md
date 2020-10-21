@@ -3,9 +3,7 @@
 ## Purpose
 This is a project implenting Random Sampling for Group-By Queries [(1)](https://arxiv.org/pdf/1909.02629.pdf) in Flink Platform.
 The goal of this project is to sample streaming tuples, answering effectively Single Aggregate along with a single group-by clause.
-This implementation is a two-pass algorithm which is devided into two phases. The first phase has been taken from the first job 
-( pre-processing ) and the second phase from the second job(reservoir sampling).
-
+This implementation is a two-pass algorithm which is devided into two phases. The first phase has been taken from the first job (pre-processing) and the second phase from the second job (reservoir sampling).
 
 ## Pipeline
 
@@ -30,14 +28,12 @@ where the fields are the following:
 4. The counter of the stratum 
 5. The constant value of 1
 #### Window 2
-* In this window we have the KeySelector2( ) which selects the last field (aka the constant value of 1) and based on this key the process() function
+* In this window we have the KeySelector2() which selects the last field (aka the constant value of 1) and based on this key the process() function
 calculates the γi (variance/mean) of each stratum and finds the total γ which represents the sum of all γi. Lastly, it writes the data in a Sink as mentioned before.
-The returned Tuple and the output of the first Job is of the type of **_(T)_** where all fields are the same, except the last one, where now we put the si ( M\*(γi/γ),size of stratum ) of each stratum 
+The returned Tuple and the output of the first Job is of the type of **_(T)_** where all fields are the same, except the last one, where now we put the ```si ( M\*(γi/γ),size of stratum )``` of each stratum 
 where M is the Memory Budget, which is also an argument for the Job1.
 
-
 ![](Sources/Photos/job1.PNG "Job1")
-
 
 ### Job2 - Sampling
 
@@ -57,13 +53,13 @@ In order to run our code.
 	1. You run as Java Application with inputs
 2. You Download Flink Project [Job1](Jars/finaljob1.jar)
 3. You open the first Windows Terminal 
-	1. Type cd C:\flink-1.8.2\bin\ 
+	1. Type cd ```C:\flink-1.8.2\bin\``` 
 	2. Type C:\flink-1.8.2\bin\start-cluster.bat
-	3. flink run *"yourJar1Path"* with inputs
+	3. ```flink run *"yourJar1Path"* ``` with inputs
 4. You Download Flink Project [Job2](Jars/finaljob2.jar)
 5. You open the second Windows Terminal
-	1. Type cd C:\flink-1.8.2\bin\ 
-	2. flink run *"yourJar2Path"* with inputs
+	1. Type ```cd C:\flink-1.8.2\bin\```
+	2. ```flink run *"yourJar2Path"*``` with inputs
 
 ## Inputs
 
@@ -74,8 +70,8 @@ In order to run our code.
 
 * **For the Job1 the inputs are:**
 
-	-columns Year,District.Code,District.Name,Neighborhood.Code,Neighborhood.Name,Gender,Age,Number -group_attr District.Name,Year -aggr_attr Number -memory 500 -parallelism 4 -windowTime 60 -windowTime1 20
+	```-columns Year,District.Code,District.Name,Neighborhood.Code,Neighborhood.Name,Gender,Age,Number -group_attr District.Name,Year -aggr_attr Number -memory 500 -parallelism 4 -windowTime 60 -windowTime1 20```
 
 * **For the Job2 the inputs are:**
 
-	-columns Year,District.Code,District.Name,Neighborhood.Code,Neighborhood.Name,Gender,Age,Number -group_attr District.Name,Year -parallelism 4 -output testSink1
+	```-columns Year,District.Code,District.Name,Neighborhood.Code,Neighborhood.Name,Gender,Age,Number -group_attr District.Name,Year -parallelism 4 -output testSink1```
