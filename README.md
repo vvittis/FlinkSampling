@@ -1,6 +1,6 @@
 # Random Sampling for Group-By Queries in Flink
  
- 
+![Architecture](https://github.com/vvittis/FlinkSampling/blob/master/Sources/Photos/Architecture.png)
 ## Purpose
 This is a project implenting Random Sampling for Group-By Queries [(1)](https://arxiv.org/pdf/1909.02629.pdf) in Flink Platform.
 The goal of this project is to sample streaming tuples, answering effectively Single Aggregate along with a single group-by clause.
